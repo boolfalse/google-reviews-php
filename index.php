@@ -1,6 +1,9 @@
 <?php
     $schema = file_get_contents('schema.json');
     $schema_array = json_decode($schema, true);
+    if(!file_exists('config.php')) {
+        die("config.php file not found! Please create one as described in the README.md");
+    }
     $config = require_once 'config.php';
 
     $min_star = 1; // 1-5
